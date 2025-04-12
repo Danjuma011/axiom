@@ -8,7 +8,6 @@ import img5 from "../../../public/img/image-5.png";
 import img6 from "../../../public/img/image-6.webp";
 
 const Carousel = () => {
-  // Define individual sizes for each image
   const images = [
     { src: img1, alt: "Image 1", width: 400, height: 300 },
     { src: img2, alt: "Image 2", width: 400, height: 600 },
@@ -19,20 +18,24 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="">
-      <div className="flex gap-16 overflow-x-auto py-4 no-scrollbar items-center px-20 ">
+    <div className="px-4 sm:px-10 lg:px-20 py-4">
+      <div className="flex gap-4 sm:gap-8 overflow-x-auto no-scrollbar items-center justify-start">
         {images.map((image, index) => (
           <div
             key={index}
-            className="flex-shrink-0 "
-            style={{ width: image.width, height: image.height }}
+            className="flex-shrink-0"
+            style={{
+              width: "100%",
+              maxWidth: "400px",
+              height: "auto",
+            }}
           >
             <Image
               src={image.src}
               alt={image.alt}
               width={image.width}
               height={image.height}
-              className="rounded-2xl object-cover w-full h-full"
+              className="rounded-2xl object-cover w-full h-auto"
             />
           </div>
         ))}

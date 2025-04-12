@@ -11,11 +11,11 @@ const Sponsors = () => {
   const sponsors = [img1, img2, img3, img4, img5, img6];
 
   return (
-    <div className="flex justify-between mx-20 gap-6 flex-wrap mt-30 mb-40 text-gray-200">
+    <div className="flex justify-center items-center flex-wrap gap-6 px-4 sm:px-10 md:px-20 mt-20 mb-40 text-gray-200 text-center">
       {sponsors.map((img, index) => (
         <div
           key={index}
-          className="grayscale hover:grayscale-10 transition duration-300 ease-in-out "
+          className="grayscale hover:grayscale-0 transition duration-300 ease-in-out"
         >
           <Image
             src={img}
