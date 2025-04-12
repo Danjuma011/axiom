@@ -45,9 +45,9 @@ const Header = memo(() => {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 bg-gray-900 shadow-md">
+    <header className="h-screen z-50 bg-gray-900 shadow-md">
       <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between ">
+        <div className="flex items-center justify-between  mt-8">
           <div className="flex space-x-8">
             {/* Logo */}
             <Link
@@ -146,6 +146,18 @@ const Header = memo(() => {
             </div>
           ))}
         </nav>
+      </div>
+      <div className="text-center mt-30 text-[#fefefe]">
+        <p className="text-6xl font-bold mb-6 ">
+          Turning Creative Ideas <br /> into Success
+        </p>
+        <p className="mb-4 ">
+          Consectetur adipiscing elit, sed do eiusmod tempor incididunt <br />{" "}
+          dolore magna aliqua quis nostrud exerc.
+        </p>
+        <button className="px-10 py-3 bg-[#57bdef] rounded-3xl mt-8">
+          Discover Now
+        </button>
       </div>
     </header>
   );
