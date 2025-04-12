@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import img1 from "../../../public/img/whitegirlimg.webp";
 import img2 from "../../../public/img/laptopimg.webp";
-// import img3 from "../../../public/img/2moons.webp";
-// import img4 from "../../../public/img/plusimg.webp";
+import img3 from "../../../public/img/2moons.webp";
+import img4 from "../../../public/img/plusimg.webp";
 
 const Services = () => {
   return (
@@ -27,7 +27,14 @@ const Services = () => {
           {" "}
           {/* Container with fixed height */}
           {/* First Image - Slight tilt */}
-          <div className="absolute z-50 top-22 ">
+          <div className="absolute z-10 top-22 ">
+            <Image
+              src={img4}
+              alt="Male portrait"
+              width={100}
+              height={100}
+              className="rounded-lg shadow-lg border-4 object-cover z-50 relative bottom-30 "
+            />
             <Image
               src={img2}
               alt="Male portrait"
@@ -44,6 +51,13 @@ const Services = () => {
               width={400}
               height={500}
               className="rounded-lg shadow-lg border-4 object-cover"
+            />
+            <Image
+              src={img3}
+              alt="Female portrait"
+              width={100}
+              height={100}
+              className="rounded-lg shadow-lg border-4 object-cover z-50 absolute right-[70px] bottom-[-150px]"
             />
           </div>
           {/* Add more images with increasing tilt and vertical offset as needed */}
