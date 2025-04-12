@@ -50,7 +50,7 @@ const Reference = () => {
 
   return (
     <>
-      <div className="flex justify-between mx-30 mt-30 mb-20">
+      <div className="flex justify-between mx-20 mt-30 mb-20">
         <p className="text-5xl font-semibold">
           Subscribe for the <br /> exclusive updates!
         </p>
@@ -77,7 +77,7 @@ const Reference = () => {
                 }`}
               onClick={handleClick}
             >
-              {isChecked && <div className="w-3 h-3 rounded-lg bg-white"></div>}
+              {isChecked && <div className="w-3 h-3 rounded-lg bg-black"></div>}
             </button>
             <p className="mt-4 text-gray-400 cursor-pointer items-center">
               I agree to the{" "}
