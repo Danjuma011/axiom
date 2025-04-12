@@ -8,7 +8,7 @@ import Reference from "./components/reference";
 import Services from "./components/services-provided";
 import Sponsors from "./components/sponsors";
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
       <Header />
