@@ -174,7 +174,7 @@ const Header = memo(() => {
             >
               <BiPhoneCall className="text-white w-[25px] h-[25px]" />
             </a>{" "}
-            <p className="ml-3 text-white">1 800 458 56 97</p>
+            <p className="ml-3 text-white ">1 800 458 56 97</p>
             <button className="px-10 py-2 bg-[#3d10d0] rounded-3xl ml-8 text-white">
               let&apos;s talk
             </button>
@@ -238,7 +238,7 @@ const Header = memo(() => {
       )}
 
       <div className="text-center mt-30 text-[#fefefe]  relative">
-        <p className="text-6xl font-bold mb-6">
+        <p className=" text-4xl lg:text-6xl font-bold mb-6">
           Turning Creative Ideas <br /> into Success
         </p>
         <p className="mb-4">
