@@ -3,7 +3,7 @@
 import { useState, useCallback, memo, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FiSearch } from "react-icons/fi";
+import { FiSearch, FiMenu } from "react-icons/fi";
 import Image from "next/image";
 import dread from "../../../public/img/logo-inverse2-nocopyright.webp";
 import hero from "../../../public/img/hero5.avif";
@@ -31,6 +31,7 @@ const Header = memo(() => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,6 +66,10 @@ const Header = memo(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <header className="relative h-screen z-50 shadow-md px-20">
       {/* Hero Image */}
@@ -88,7 +93,7 @@ const Header = memo(() => {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden lg:flex space-x-8">
               {NAV_ITEMS.map((item) => (
                 <div key={item.path} className="relative group">
                   <Link
@@ -167,7 +172,7 @@ const Header = memo(() => {
               </div>
             </nav>
           </div>
-          <div className="flex items-center ">
+          <div className="flex items-center">
             <a
               href="tel:+1234567890"
               className="p-2 bg-gray-900 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
@@ -178,24 +183,38 @@ const Header = memo(() => {
             <button className="px-10 py-2 bg-[#3d10d0] rounded-3xl ml-8 text-white">
               let&apos;s talk
             </button>
+            {/* Hamburger menu button for lg and below */}
+            <button
+              onClick={toggleMobileMenu}
+              className="lg:hidden ml-4 p-2 rounded-full hover:bg-gray-800 transition-colors"
+              aria-label="Open menu"
+            >
+              <FiMenu className="w-6 h-6 text-white" />
+            </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        <nav className="md:hidden flex items-center justify-center space-x-6 mt-3">
-          {NAV_ITEMS.map((item) => (
-            <div key={item.path} className="relative group">
-              <Link href={item.path} className="text-white text-xs uppercase">
-                {item.label}
-              </Link>
-              <div
-                className={`absolute left-0 bottom-0 h-0.5 bg-white transition-all duration-300 ${
-                  isActive(item.path) ? "w-full" : "w-0 group-hover:w-full"
-                }`}
-              />
-            </div>
-          ))}
-        </nav>
+        {/* Mobile Navigation Menu (lg and below) */}
+        {mobileMenuOpen && (
+          <nav className="lg:hidden bg-black bg-opacity-90 mt-4 p-4 rounded-lg">
+            {NAV_ITEMS.map((item) => (
+              <div key={item.path} className="relative group mb-4">
+                <Link
+                  href={item.path}
+                  className="text-white font-medium text-sm uppercase tracking-wide block py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+                <div
+                  className={`absolute left-0 bottom-1px h-0.5 bg-white transition-all duration-300 ${
+                    isActive(item.path) ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </div>
+            ))}
+          </nav>
+        )}
       </div>
 
       {/* Three boxes fixed to the right */}
