@@ -19,13 +19,13 @@ const Services = () => {
             Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas{" "}
             <br /> sit aspernatur aut odit aut fugit, sed quia.
           </p>
-          <button className="px-8 py-4 rounded-4xl bg-blue-400 text-white">
+          <button className="px-8 py-4 rounded-4xl bg-blue-400 text-white mb-20 lg:mb-0">
             Discover Now
           </button>
         </div>
 
         {/* Right Section - Image Container */}
-        <div className="relative w-full sm:w-1/2 h-[400px] sm:h-[500px] lg:h-[600px] mt-10 sm:mt-0">
+        <div className="relative w-full sm:w-1/2 h-[400px] sm:h-[500px] lg:h-[600px] mb-20 lg:mb-0">
           {/* First Image - Slight tilt */}
           <div className="absolute z-10 top-[5%] sm:top-[10%]">
             <Image
